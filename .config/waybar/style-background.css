@@ -2,8 +2,9 @@
 
 * {
   color: @lavender;
-  border: 0;
+  border: none;
   padding: 0;
+  margin: 0;
   font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", "Font Awesome", sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -11,27 +12,26 @@
 }
 
 window#waybar {
-  background-color: shade(#1e1e2e, 0.95);
-  border-bottom: 4px solid shade(@base, 1.1);
-
-  /*border: 0px solid rgba(0, 0, 0, 0);
-   background-color: rgba(0, 0, 0, 0); */
+  background-color: rgba(0, 0, 0, 0); /* full transparan */
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* --- Workspaces --- */
 #workspaces {
   background-color: @base;
   border-radius: 10px;
+  padding: 0 6px;
   margin: 6px 0 6px 8px;
-  padding: 0 4px;
 }
 
 #workspaces button {
   color: whitesmoke;
-  margin: 2px 2px;
-  padding: 2px 6px;
-  border-radius: 50%;
   background: transparent;
+  border-radius: 50%;
+  margin: 2px;
+  padding: 4px 8px;
   min-width: 22px;
 }
 
@@ -42,10 +42,10 @@ window#waybar {
 
 #workspaces button.focused {
   background-color: @mauve;
-  color: @base;
+  color: @peach;
 }
 
-/* --- Modules (compact) --- */
+/* --- Shared Module Style --- */
 #clock,
 #custom-swap,
 #custom-clipboard,
@@ -59,56 +59,87 @@ window#waybar {
 #network,
 #pulseaudio,
 #mode,
-#tray {
-  padding: 4px 8px;
+#tray,
+#mpd {
   background-color: shade(@base, 1.1);
+  color: @text;
   border-radius: 10px;
-  margin: 6px 3px;
+  padding: 6px 10px;
+  margin: 6px 4px;
+  margin-left: 6px;
 }
 
 /* --- Mode --- */
 #mode {
   color: @mauve;
-  margin-right: 4px;
 }
 
+/* --- MPD --- */
+#mpd {
+  color: @mauve;
+  background: none;
+}
 
-/* --- Custom --- */
+#mpd.2,
+#mpd.3,
+#mpd.4 {
+  background-color: @base;
+  font-size: 14px;
+}
+
+#mpd.2 {
+  border-radius: 10px 0 0 10px;
+  padding: 6px 10px 6px 8px;
+}
+
+#mpd.3 {
+  border-radius: 0;
+  padding: 6px;
+}
+
+#mpd.4 {
+  border-radius: 0 10px 10px 0;
+  padding: 6px 10px 6px 12px;
+}
+
+/* --- Custom Modules --- */
 #custom-swap {
   color: @mauve;
   background-color: @base;
-  border-radius: 10px;
-  margin-left: 6px;
 }
 
 #custom-background {
   color: white;
   background-color: @base;
   border-radius: 0 10px 10px 0;
-  padding: 4px 12px 4px 5px;
 }
 
 #custom-launcher {
-  font-size: 18px;
+  font-size: 14px;
   background-color: shade(@base, 1.1);
   color: @mauve;
-  border-radius: 0 10px 10px 0;
+/*  border-radius: 0 10px 10px 0;
   padding: 4px 12px 4px 5px;
+  padding: 6px 12px; */
+  border-radius: 10px;
+  padding: 6px 10px;
+  margin: 6px 4px;
 }
 
 #custom-power {
-  font-size: 18px;
+  font-size: 14px;
   color: @red;
   background-color: shade(@base, 1.1);
-  border-radius: 10px 0 0 10px;
-  padding: 4px 12px 4px 5px;
+ /*border-radius: 0px 10px 10px 0;
+ padding: 6px 12px; */
+  border-radius: 10px;
+  padding: 6px 10px;
+  margin: 6px 4px;
 }
 
 /* --- Battery --- */
 #battery {
   color: #d8dee9;
-  border-radius: 0 10px 10px 0;
-  margin-right: 6px;
 }
 
 #battery.charging {
@@ -117,10 +148,7 @@ window#waybar {
 
 #battery.critical:not(.charging) {
   color: #bf616a;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation: blink 0.5s linear infinite alternate;
 }
 
 @keyframes blink {
@@ -140,14 +168,11 @@ window#waybar {
 
 #memory {
   color: @sky;
-  border-radius: 10px 10px 10px 10px;
-  margin-right: 6px;
 }
 
 /* --- Temperature --- */
 #temperature {
   color: @teal;
-  border-radius: 10px 0 0 10px;
 }
 
 #temperature.critical {
@@ -157,8 +182,6 @@ window#waybar {
 /* --- Network --- */
 #network {
   color: @green;
-  border-radius: 10px;
-  margin-right: 6px;
 }
 
 #network.disabled,
@@ -169,8 +192,6 @@ window#waybar {
 /* --- Audio --- */
 #pulseaudio {
   color: @flamingo;
-  border-radius: 10 10px 10px 10;
-  margin-right: 6px;
 }
 
 #pulseaudio.muted {

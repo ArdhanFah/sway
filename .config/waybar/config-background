@@ -10,10 +10,10 @@
     "custom/swap",
     "tray",
     "sway/mode"
-//"mpd#2",
-//"mpd#3",
-//"mpd#4",
-//"mpd"
+//    "mpd#2",
+//    "mpd#3",
+//    "mpd#4",
+//    "mpd"
   ],
   "modules-center": ["clock"],
   "modules-right": [
@@ -36,7 +36,7 @@
     "format": "  bg"
   },
   "custom/power": {
-    "format": " ⏻ ",
+    "format": " ⏻  ",
     "on-click": "~/.config/sway/scripts/wofi_powermenu",
     "tooltip": false
   },
@@ -83,6 +83,36 @@
     "format-alt": "  {:%d/%m/%Y  %H:%M}",
     "interval": 1
   },
+
+  // "mpd": {
+  //   "tooltip": true,
+  //   "tooltip-format": "{artist} - {album} - {title} - Total Time : {totalTime:%M:%S}",
+  //   "format": " {elapsedTime:%M:%S}",
+  //   "format-disconnected": "⚠ Disconnected",
+  //   "format-stopped": " Not Playing",
+  //   "on-click": "mpc toggle",
+  //   "state-icons": {
+  //     "playing": "",
+  //     "paused": ""
+  //   }
+  // },
+  // "mpd#2": {
+  //   "format": "",
+  //   "on-click": "mpc -q pause && mpc -q prev && mpc -q start"
+  // },
+  // "mpd#3": {
+  //   "interval": 1,
+  //   "format": "{stateIcon}",
+  //   "state-icons": {
+  //     "paused": "",
+  //     "playing": ""
+  //   },
+  //   "on-click": "mpc toggle"
+  // },
+  // "mpd#4": {
+  //   "format": "",
+  //   "on-click": "mpc -q pause && mpc -q next && mpc -q start"
+  // },
 
   "pulseaudio": {
     "scroll-step": 1,
