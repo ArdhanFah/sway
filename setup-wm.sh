@@ -4,10 +4,11 @@ set -e
 echo "🎨 Setup Window Manager & Configs..."
 
 # Install Sway, Terminal, Bar, File Manager, Fonts
-sudo apt install -y sway swaybg swayidle xwayland foot waybar wofi thunar alacritty pulseaudio fonts-font-awesome fonts-jetbrains-mono mako notify-send brightnessctl grim slurp jq
+sudo apt install -y sway swaybg swayidle xwayland foot waybar wofi thunar alacritty pulseaudio fonts-font-awesome fonts-jetbrains-mono brightnessctl grim slurp jq
 
 # Copy Konfigurasi
 echo "📁 Copy konfigurasi ke .config"
+mkdir -p ~/.config
 cp -r .config/* ~/.config/
 
 # Copy Fonts Tambahan
