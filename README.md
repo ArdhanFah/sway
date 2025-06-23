@@ -1,3 +1,5 @@
+![RunfluxOS Screenshot](assets/RunFluxOS.png)
+
 # ⚡ RunfluxOS Dotfiles & Setup
 
 Ini adalah repository konfigurasi & setup otomatis untuk remaster atau personalisasi RunfluxOS (berbasis Ubuntu + Sway).
