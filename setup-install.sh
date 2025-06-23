@@ -14,6 +14,9 @@ echo "🔧 Setup Apps (Brave, VSCode, Spotify)..."
 echo "🎨 Setup Window Manager & Configs..."
 ./setup-wm.sh
 
+echo "🔒 Setup Login Manager..."
+./setup-login.sh
+
 echo "🔧 Setup MOTD..."
 ./setup-motd.sh
 
