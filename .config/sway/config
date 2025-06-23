@@ -7,6 +7,8 @@ set $term foot
 set $menu wofi --show drun
 set $browser brave-browser --ozone-platform=wayland
 set $code code --ozone-platform=wayland
+set $spotify spotify --ozone-platform=wayland
+
 ### Include System Config Vars ###
 include /etc/sway/config-vars.d/*
 
@@ -18,8 +20,8 @@ gaps outer 7px
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 ### Autostart ###
-exec_always swaybg -i /.config/sway/backgrounds/02.png -m fill
-#exec_always ~/.config/sway/scripts/random-wallpaper.sh
+#exec_always swaybg -i /.config/sway/backgrounds/02.png -m fill
+exec_always ~/.config/sway/scripts/random-wallpaper.sh
 exec_always waybar
 exec_always swayidle -w \
     timeout 300 'swaylock -f -c 000000' \
@@ -36,6 +38,8 @@ bindsym $mod+e exec thunar
 bindsym $mod+b exec $browser
 bindsym $mod+c exec $code
 bindsym $mod+slash exec ~/.config/sway/scripts/cheatsheet
+bindsym $mod+m exec $spotify
+
 ### Window Management ###
 bindsym $mod+q kill
 bindsym $mod+Shift+q kill
