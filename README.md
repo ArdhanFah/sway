@@ -32,12 +32,14 @@ Semua konfigurasi Window Manager, Terminal, Waybar, Fonts, hingga Login Manager 
 git clone https://github.com/ArdhanFah/sway.git
 cd sway
 chmod +x setup*.sh cleanup.sh
-
+```
 
 ### **2. Jalankan Setup Utama**
 ```bash
 ./setup-install.sh
+```
 
 ### **3. Jalankan Clean Up**
 ```bash
 ./cleanup.sh
+```
